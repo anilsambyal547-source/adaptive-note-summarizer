@@ -1,0 +1,32 @@
+# Python boilerplate
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments
+venv/
+venv3/
+env/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Streamlit
+.streamlit/secrets.toml
+
+# IDEs
+.vscode/
+.idea/
+
+# Project-specific logs and temp files
+*.log
+pytest_results.txt
+test_failure_report.md
+pytest_out.txt
+st_path.txt
+out.txt
