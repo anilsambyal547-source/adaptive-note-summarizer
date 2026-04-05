@@ -7,14 +7,17 @@ logger = logging.getLogger(__name__)
 
 # Static fallback list — used only when dynamic discovery fails.
 STATIC_MODELS = [
-    "models/gemini-2.0-flash",
-    "models/gemini-2.0-flash-001",
+    "models/gemini-3.1-flash",
+    "models/gemini-3.1-pro",
     "models/gemini-2.5-flash",
     "models/gemini-2.5-pro",
+    "models/gemini-2.0-flash",
+    "models/gemini-2.0-flash-001",
     "models/gemini-1.5-flash",
     "models/gemini-1.5-pro",
     "models/gemini-1.0-pro",
 ]
+
 
 
 class ModelManager:
@@ -80,8 +83,9 @@ class ModelManager:
     def is_vision_capable(self) -> bool:
         """Check if current model supports image input."""
         name = self.model_name.lower()
-        # Gemini 1.5+ and 2.x models support vision
-        return any(v in name for v in ("1.5", "2.0", "2.5", "flash", "pro-vision"))
+        # Gemini 1.5+ and 2.x/3.x models support vision
+        return any(v in name for v in ("1.5", "2.0", "2.5", "3.1", "flash", "pro-vision"))
+
 
     def reset(self):
         """Clear cached model state so next call re-discovers."""
